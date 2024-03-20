@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<bean id="cAdd" class="ch03_pjt_03.CalAdd" />
+	<bean id="cSub" class="ch03_pjt_03.CalSub" />
+	<bean id="cMul" class="ch03_pjt_03.CalMul" />
+	<bean id="cDiv" class="ch03_pjt_03.CalDiv" />
+	
+	<bean id= "myCalculator" class="ch03_pjt_03.MyCalculator" />
+	
+	<bean id="calAssembler" class = "ch03_pjt_03.CalAssembler">
+		<constructor-arg ref="myCalculator" />
+		<constructor-arg ref="cAdd" />
+		<constructor-arg ref="cSub" />
+		<constructor-arg ref="cMul" />
+		<constructor-arg ref="cDiv" />
+	
+	</bean>
+	
+</beans>
